@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">
+  <rect width="640" height="440" fill="#111113"/>
+  <path d="M60 320 l130 -120 l90 70 l120 -140 l180 190 z" fill="none" stroke="#c9e265" stroke-width="8"/>
+  <circle cx="470" cy="100" r="34" fill="#c9e265"/>
+  <path d="M120 120 l90 40 l-30 18 l-70 -20 z M210 160 l-8 40 l20 -12 z" fill="#65b5e2"/>
+  <text x="320" y="400" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#c9e265" text-anchor="middle">your travel photo</text>
+</svg>

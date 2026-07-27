@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <rect width="640" height="400" fill="#111113"/>
+  <circle cx="300" cy="180" r="46" fill="#c9e265"/><path d="M300 180 l60 -30 l-10 40 z" fill="#0a0a0b"/><rect x="480" y="60" width="50" height="110" fill="#65b5e2" opacity="0.7"/><rect x="480" y="250" width="50" height="110" fill="#65b5e2" opacity="0.7"/>
+  <text x="36" y="360" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="30" fill="#fafaf6">FlapSnap</text>
+</svg>

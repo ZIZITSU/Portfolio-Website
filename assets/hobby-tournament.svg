@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440">
+  <rect width="640" height="440" fill="#111113"/>
+  <path d="M250 110 h140 v60 a70 70 0 0 1 -140 0 Z" fill="#c9e265"/><rect x="305" y="235" width="30" height="40" fill="#c9e265"/><rect x="270" y="275" width="100" height="20" rx="4" fill="#c9e265"/><path d="M250 125 h-45 a45 45 0 0 0 45 55 M390 125 h45 a45 45 0 0 1 -45 55" fill="none" stroke="#c9e265" stroke-width="12"/>
+  <text x="320" y="400" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#c9e265" text-anchor="middle">your tournament photo</text>
+</svg>
