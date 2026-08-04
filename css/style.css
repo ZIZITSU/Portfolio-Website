@@ -904,30 +904,227 @@ img { display: block; max-width: 100%; }
 
 /* ================= CONTACT ================= */
 .contact {
-  width: min(100% - 48px, 900px);
+  position: relative;
+  overflow: hidden;
+  background: var(--dark);
+  color: #e3e4dc;
+  padding: clamp(80px, 12vh, 140px) 0;
+}
+.contact-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 226, 101, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.contact-wrapper {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+  width: min(100% - 48px, 1100px);
   margin: 0 auto;
-  padding: clamp(80px, 12vh, 150px) 0;
+}
+.contact-left {
+  padding-top: 10px;
+}
+.contact .kicker {
+  color: var(--signal);
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: clamp(44px, 6vw, 72px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  color: #fafaf6;
+}
+.contact-title .serif {
+  color: var(--signal);
+}
+.contact-desc {
+  margin-top: 20px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: #8f9189;
+  max-width: 380px;
+}
+.contact-info {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 15px;
+  font-weight: 550;
+  color: #b2b4ab;
+  transition: background 0.3s var(--ease), color 0.3s, border-color 0.3s;
+}
+.contact-link:hover {
+  background: rgba(201, 226, 101, 0.08);
+  border-color: rgba(201, 226, 101, 0.2);
+  color: var(--signal);
+}
+.contact-link svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.contact-link:hover svg {
+  opacity: 1;
+}
+
+/* ---- Form ---- */
+.contact-form {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 40px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b6d64;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e3e4dc;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 450;
+  outline: none;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    background-color 0.3s var(--ease);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.18);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(201, 226, 101, 0.4);
+  background: rgba(201, 226, 101, 0.04);
+  box-shadow: 0 0 0 3px rgba(201, 226, 101, 0.08), 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 18px 32px;
+  border: none;
+  border-radius: 14px;
+  background: var(--signal);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(201, 226, 101, 0.2),
+    inset 0 1px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    background-color 0.25s, opacity 0.3s;
+  will-change: transform;
+}
+.contact-submit:hover {
+  background: var(--signal-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(201, 226, 101, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.5);
+}
+.contact-submit:active {
+  transform: translateY(0) scale(0.98);
+}
+.contact-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.contact-submit svg {
+  flex-shrink: 0;
+}
+
+/* Status messages */
+.form-status {
+  margin-top: 0;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s var(--ease);
 }
-.contact-inner {
-  background: rgba(255, 255, 252, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  padding: clamp(44px, 7vw, 80px) clamp(24px, 5vw, 64px);
-  box-shadow: 0 30px 80px rgba(60, 72, 20, 0.22);
+.form-status.show {
+  padding: 14px 18px;
+  max-height: 80px;
+  margin-top: 16px;
+  opacity: 1;
 }
-.contact-title { font-size: clamp(52px, 8vw, 110px); }
-.contact-title .serif { color: var(--signal-deep); }
-.contact-inner .kicker { width: auto; }
-.contact-inner p {
-  margin: 20px auto 36px;
-  max-width: 460px;
-  font-size: clamp(16px, 1.4vw, 19px);
-  color: var(--ink-soft);
-  line-height: 1.5;
+.form-status.success {
+  background: rgba(174, 200, 70, 0.12);
+  color: var(--signal);
+  border: 1px solid rgba(174, 200, 70, 0.2);
 }
+.form-status.error {
+  background: rgba(226, 101, 120, 0.1);
+  color: #e26578;
+  border: 1px solid rgba(226, 101, 120, 0.2);
+}
+
+@media (max-width: 760px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact-desc { max-width: 100%; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+
 
 /* ================= FOOTER ================= */
 .footer {
@@ -935,8 +1132,6 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   background: var(--dark);
   color: #e3e4dc;
-  border-radius: 32px 32px 0 0;
-  box-shadow: 0 -20px 60px rgba(10, 10, 11, 0.2);
 }
 .footer-bottom {
   display: flex;

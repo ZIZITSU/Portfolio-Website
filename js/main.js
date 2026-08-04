@@ -77,3 +77,49 @@ document.querySelectorAll(".magnetic").forEach((el) => {
 // ============ Footer year ============
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ============ Contact form (Web3Forms) ============
+(function () {
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("contact-submit");
+  const submitText = document.getElementById("submit-text");
+  const statusEl = document.getElementById("form-status");
+
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Disable button & show sending state
+    submitBtn.disabled = true;
+    submitText.textContent = "Sending…";
+
+    // Clear previous status
+    statusEl.className = "form-status";
+    statusEl.textContent = "";
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        statusEl.textContent = "✓ Message sent! I'll get back to you soon.";
+        statusEl.className = "form-status show success";
+        form.reset();
+      } else {
+        throw new Error(data.message || "Submission failed");
+      }
+    } catch (err) {
+      console.error("Form error:", err);
+      statusEl.textContent = "Something went wrong. Please try again or email me directly.";
+      statusEl.className = "form-status show error";
+    } finally {
+      submitBtn.disabled = false;
+      submitText.textContent = "Send Message";
+    }
+  });
+})();
