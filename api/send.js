@@ -11,6 +11,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.RESEND_API_KEY;
 
+
   if (!apiKey) {
     console.error('RESEND_API_KEY is not set in environment variables');
     return res.status(500).json({ error: 'Server configuration error: RESEND_API_KEY is missing' });

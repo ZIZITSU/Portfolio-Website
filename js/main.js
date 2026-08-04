@@ -107,7 +107,13 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
         body: JSON.stringify({ name, email, subject, message }),
       });
 
-      const data = await res.json();
+      const contentType = res.headers.get("content-type");
+      let data = {};
+      if (contentType && contentType.includes("application/json")) {
+        data = await res.json();
+      } else {
+        throw new Error("Local python static server cannot run backend API routes. Please test on your deployed Vercel site!");
+      }
 
       if (res.ok && data.success) {
         statusEl.textContent = "✓ Message sent! I'll get back to you soon.";
