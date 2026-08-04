@@ -78,7 +78,7 @@ document.querySelectorAll(".magnetic").forEach((el) => {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ============ Contact form (Web3Forms) ============
+// ============ Contact form (Resend via Vercel Serverless Function) ============
 (function () {
   const form = document.getElementById("contact-form");
   const submitBtn = document.getElementById("contact-submit");
@@ -90,32 +90,35 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Disable button & show sending state
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const subject = document.getElementById("contact-subject").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
+
     submitBtn.disabled = true;
     submitText.textContent = "Sending…";
-
-    // Clear previous status
     statusEl.className = "form-status";
     statusEl.textContent = "";
 
     try {
-      const formData = new FormData(form);
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/send", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
       });
+
       const data = await res.json();
 
-      if (data.success) {
+      if (res.ok && data.success) {
         statusEl.textContent = "✓ Message sent! I'll get back to you soon.";
         statusEl.className = "form-status show success";
         form.reset();
       } else {
-        throw new Error(data.message || "Submission failed");
+        throw new Error(data.error || "Failed to send message");
       }
     } catch (err) {
-      console.error("Form error:", err);
-      statusEl.textContent = "Something went wrong. Please try again or email me directly.";
+      console.error("Form submit error:", err);
+      statusEl.textContent = err.message || "Something went wrong. Please try again.";
       statusEl.className = "form-status show error";
     } finally {
       submitBtn.disabled = false;
@@ -123,3 +126,4 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     }
   });
 })();
+
