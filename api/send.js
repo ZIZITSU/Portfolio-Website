@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: `${name} <onboarding@resend.dev>`,
+        from: 'Portfolio Contact <onboarding@resend.dev>',
         to: ['mahirlabib389@gmail.com'],
         reply_to: email,
         subject: `[Portfolio Contact] ${subject}`,
