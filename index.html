@@ -16,6 +16,7 @@
 </head>
 <body>
   <div class="grid-lines" aria-hidden="true"></div>
+  <canvas class="bg-canvas" aria-hidden="true"></canvas>
   <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ============ NAV ============ -->
@@ -170,46 +171,10 @@
         <span class="kicker">03 — Projects</span>
         <h2>Built with <em class="serif">code</em></h2>
       </div>
-      <div class="project-grid">
-        <a class="project-card reveal" href="https://mahir-labib.itch.io/chase" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/Chase.png" alt="CHASE screenshot" /></div>
-          <div class="p-head"><h3>CHASE</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>C++</span><span>raylib</span><span>Illustrator</span></div>
-        </a>
-        <a class="project-card reveal" href="https://github.com/ZIZITSU/Pocket-Tracker-Music-Player" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/PocketTracker.png" alt="PocketTracker screenshot" /></div>
-          <div class="p-head"><h3>PocketTracker</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>C++</span><span>File Handling</span><span>SFML</span><span>Qt (GUI)</span></div>
-        </a>
-        <a class="project-card reveal" href="https://automech2026.vercel.app" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/Automech.png" alt="Automech website screenshot" /></div>
-          <div class="p-head"><h3>Automech Website</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-        </a>
-        <a class="project-card reveal" href="https://formula-iut.vercel.app/" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/FIUT_website.png" alt="Formula IUT website screenshot" /></div>
-          <div class="p-head"><h3>Formula IUT Website</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-        </a>
-        <a class="project-card reveal" href="https://mahir-labib.itch.io/partyjam" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/PartyJam.png" alt="PartyJam game screenshot" /></div>
-          <div class="p-head"><h3>PartyJam Game</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>Unity</span><span>C#</span><span>Illustrator</span><span>Blender</span></div>
-        </a>
-        <a class="project-card reveal" href="https://mahir-labib.itch.io/flapsnap" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/FlapSnap.png" alt="FlapSnap game screenshot" /></div>
-          <div class="p-head"><h3>FlapSnap</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>Unity</span><span>C#</span><span>Illustrator</span></div>
-        </a>
-        <a class="project-card reveal" href="https://github.com/istamimnaser/SimRacing-Button-Box-With-Display" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/circuit_diagram.png" alt="SimRacing Button Box with Display screenshot" /></div>
-          <div class="p-head"><h3>SimRacing Button Box with Display</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>Arduino</span><span>SimHub</span><span>Microcontroller</span></div>
-        </a>
-        <a class="project-card reveal" href="https://github.com/ZIZITSU/ACC-Setup-Guide" target="_blank" rel="noopener">
-          <div class="p-thumb"><img src="assets/projects/ACC.png" alt="Assetto Corsa Competizione Assistant screenshot" /></div>
-          <div class="p-head"><h3>Assetto Corsa Competizione Assistant</h3><span class="arr">↗</span></div>
-          <div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+      <div class="pcard-list" data-project-mount="featured" data-project-limit="6"></div>
+      <div class="projects-more">
+        <a class="btn btn-outline" href="/projects.html" target="_blank" rel="noopener">
+          Show More Projects <span class="arr">→</span>
         </a>
       </div>
     </section>
@@ -333,18 +298,62 @@
         <h2>My <em class="serif">hobbies</em></h2>
       </div>
       <div class="hobby-grid">
-        <figure class="hobby-card reveal">
+        <a class="hobby-card reveal" href="setup.html">
           <img src="assets/Setup.jpeg" alt="My PC setup" />
-          <figcaption><strong>My battlestation</strong><span>Built it myself, part by part.</span></figcaption>
-        </figure>
+          <div class="hobby-caption"><strong>My battlestation</strong><span>Built it myself, part by part. Full gear list →</span></div>
+        </a>
         <figure class="hobby-card reveal">
           <img src="assets/hobby-tournament.svg" alt="Tournament hosting" />
           <figcaption><strong>Esports</strong><span>Working on BD esports scene organizing tournament, managing teams and working wth multiple international brands.</span></figcaption>
         </figure>
-        <figure class="hobby-card reveal">
+        <a class="hobby-card reveal" href="travel.html">
           <img src="assets/hobby-travel.svg" alt="Travelling" />
-          <figcaption><strong>Travelling</strong><span>Planning to visit 10 countries before I graduate with my own money</span></figcaption>
-        </figure> 
+          <div class="hobby-caption"><strong>Travelling</strong><span>Planning to visit 10 countries before I graduate. Where I've been →</span></div>
+        </a>
+        <a class="hobby-card reveal" href="perfumes.html">
+          <img src="assets/hobby-perfume.svg" alt="Perfume collection" />
+          <div class="hobby-caption"><strong>Perfume collection</strong><span>A few signature scents I keep coming back to. See the shelf →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ AVAILABILITY / GLOBE ============ -->
+    <section class="section" id="availability">
+      <div class="section-head reveal">
+        <span class="kicker">10 — Flexible with timezones</span>
+        <h2>Based in <em class="serif">Bangladesh</em>, available globally</h2>
+      </div>
+      <div class="availability-grid">
+        <div class="globe-card reveal">
+          <div class="globe-wrap">
+            <canvas class="globe-canvas" aria-label="Globe showing Dhaka, Bangladesh with connections to cities I work with worldwide"></canvas>
+            <div class="globe-label" style="position-anchor: --cobe-dhaka; --v: var(--cobe-visible-dhaka, 0);">Dhaka</div>
+            <div class="globe-label" style="position-anchor: --cobe-london; --v: var(--cobe-visible-london, 0);">London</div>
+            <div class="globe-label" style="position-anchor: --cobe-newyork; --v: var(--cobe-visible-newyork, 0);">New York</div>
+            <div class="globe-label" style="position-anchor: --cobe-dubai; --v: var(--cobe-visible-dubai, 0);">Dubai</div>
+            <div class="globe-label" style="position-anchor: --cobe-tokyo; --v: var(--cobe-visible-tokyo, 0);">Tokyo</div>
+            <div class="globe-label" style="position-anchor: --cobe-sydney; --v: var(--cobe-visible-sydney, 0);">Sydney</div>
+          </div>
+        </div>
+        <div class="github-card reveal">
+          <div class="github-card-head">
+            <h3>GitHub activity</h3>
+            <a href="https://github.com/ZIZITSU" target="_blank" rel="noopener">@ZIZITSU <span class="arr">↗</span></a>
+          </div>
+          <div class="github-chart-wrap" aria-live="polite">
+            <p class="github-fallback">Loading live activity…</p>
+          </div>
+          <div class="github-legend" aria-hidden="true">
+            Less
+            <span style="background:rgba(255,255,255,0.06)"></span>
+            <span style="background:rgba(167,139,250,0.35)"></span>
+            <span style="background:rgba(167,139,250,0.55)"></span>
+            <span style="background:rgba(167,139,250,0.78)"></span>
+            <span style="background:rgba(167,139,250,1)"></span>
+            More
+          </div>
+          <p class="github-stats"></p>
+        </div>
       </div>
     </section>
 
@@ -353,7 +362,7 @@
       <div class="contact-glow" aria-hidden="true"></div>
       <div class="contact-wrapper">
         <div class="contact-left reveal">
-          <span class="kicker">10 — Get in touch</span>
+          <span class="kicker">11 — Get in touch</span>
           <h2 class="contact-title">Let's <em class="serif">talk</em></h2>
           <p class="contact-desc">Got a project, a job, or just want to say hi? Drop me a message and I'll get back to you within 24 hours.</p>
           <div class="contact-info">
@@ -397,7 +406,7 @@
   <footer class="footer">
     <div class="footer-bottom">
       <div class="footer-socials">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/ZIZITSU" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.behance.net/yourusername" target="_blank" rel="noopener">Behance</a>
         <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">X</a>
@@ -408,6 +417,10 @@
   </footer>
 
 
+  <script src="js/interactive-bg.js"></script>
   <script src="js/main.js"></script>
+  <script type="module" src="js/projects.js"></script>
+  <script type="module" src="js/globe.js"></script>
+  <script src="js/github-activity.js"></script>
 </body>
 </html>
