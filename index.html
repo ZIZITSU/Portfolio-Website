@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="icon-spotify" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></symbol>
+    <symbol id="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  </svg>
   <div class="grid-lines" aria-hidden="true"></div>
   <canvas class="bg-canvas" aria-hidden="true"></canvas>
   <div class="cursor-dot" aria-hidden="true"></div>
@@ -74,22 +78,31 @@
         <div class="t-item reveal">
           <div class="t-year">2024 — now</div>
           <div class="t-body">
-            <h3>BSc in Computer Science &amp; Engineering</h3>
-            <p>Islamic University of Technology</p>
+            <div class="t-logo"><img class="t-logo-sm" src="assets/IUT.png" alt="Islamic University of Technology logo" /></div>
+            <div class="t-text">
+              <h3>BSc in Computer Science &amp; Engineering</h3>
+              <p>Islamic University of Technology</p>
+            </div>
           </div>
         </div>
         <div class="t-item reveal">
           <div class="t-year">2021 — 2023</div>
           <div class="t-body">
-            <h3>Higher Secondary Certificate</h3>
-            <p>Adamjee Cantonment College</p>
+            <div class="t-logo"><img src="assets/ACC.webp" alt="Adamjee Cantonment College logo" /></div>
+            <div class="t-text">
+              <h3>Higher Secondary Certificate</h3>
+              <p>Adamjee Cantonment College</p>
+            </div>
           </div>
         </div>
         <div class="t-item reveal">
           <div class="t-year">2011 — 2021</div>
           <div class="t-body">
-            <h3>Secondary School Certificate</h3>
-            <p>Dhanmondi Govt Boys High School, Dhaka</p>
+            <div class="t-logo"><img src="assets/DGBHS.png" alt="Dhanmondi Govt Boys High School logo" /></div>
+            <div class="t-text">
+              <h3>Secondary School Certificate</h3>
+              <p>Dhanmondi Govt Boys High School, Dhaka</p>
+            </div>
           </div>
         </div>
       </div>
@@ -102,36 +115,6 @@
         <h2>Where I <em class="serif">work</em></h2>
       </div>
       <div class="work-cards">
-        <a class="work-card reveal" href="https://web.facebook.com/AspireXadmission" target="_blank" rel="noopener">
-          <div class="work-top">
-            <div class="work-logo"><img src="assets/AspireX.jpg" alt="Aspirex Admissions logo" /></div>
-            <span class="chip chip-live">Current</span>
-          </div>
-          <h3>Graphic Designer</h3>
-          <p class="work-org">Aspirex Admissions · 2025 — present</p>
-          <p>Designing brand visuals, social content and video material.</p>
-          <span class="work-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="work-card reveal" href="https://web.facebook.com/nafaglobalaccord" target="_blank" rel="noopener">
-          <div class="work-top">
-            <div class="work-logo"><img src="assets/Nafa.jpg" alt="NafaGlobal logo" /></div>
-             <span class="chip chip-live">Current</span>
-          </div>
-          <h3>Graphic Designer</h3>
-          <p class="work-org">NafaGlobal · 2025 — present</p>
-          <p>Brand identities, posters and marketing creatives for global reach.</p>
-          <span class="work-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="work-card reveal" href="https://web.facebook.com/teslaiut" target="_blank" rel="noopener">
-          <div class="work-top">
-            <div class="work-logo"><img src="assets/Tesla.jpg" alt="Tesla IUT Admission logo" /></div>
-             <span class="chip chip-live">Current</span>
-          </div>
-          <h3>Content Planner</h3>
-          <p class="work-org">Tesla IUT Admission · 2026 — present</p>
-          <p>Visual content and campaign design for admission programs.</p>
-          <span class="work-arrow" aria-hidden="true">↗</span>
-        </a>
         <a class="work-card reveal" href="https://www.facebook.com/profile.php?id=61581952311598" target="_blank" rel="noopener">
           <div class="work-top">
             <div class="work-logo"><img src="assets/Pitstop.jpg" alt="Pitstop Digitals logo" /></div>
@@ -160,6 +143,36 @@
           <h3>COO</h3>
           <p class="work-org">Vanquished Paradox Gaming · 2021 — present</p>
           <p>Working for the betterment of the esports sector in my country.</p>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="work-card reveal" href="https://web.facebook.com/teslaiut" target="_blank" rel="noopener">
+          <div class="work-top">
+            <div class="work-logo"><img src="assets/Tesla.jpg" alt="Tesla IUT Admission logo" /></div>
+             <span class="chip chip-live">Current</span>
+          </div>
+          <h3>Content Planner</h3>
+          <p class="work-org">Tesla IUT Admission · 2026 — present</p>
+          <p>Visual content and campaign design for admission programs.</p>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="work-card reveal" href="https://web.facebook.com/AspireXadmission" target="_blank" rel="noopener">
+          <div class="work-top">
+            <div class="work-logo"><img src="assets/AspireX.jpg" alt="Aspirex Admissions logo" /></div>
+            <span class="chip chip-live">Current</span>
+          </div>
+          <h3>Graphic Designer</h3>
+          <p class="work-org">Aspirex Admissions · 2025 — present</p>
+          <p>Designing brand visuals, social content and video material.</p>
+          <span class="work-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="work-card reveal" href="https://web.facebook.com/nafaglobalaccord" target="_blank" rel="noopener">
+          <div class="work-top">
+            <div class="work-logo"><img src="assets/Nafa.jpg" alt="NafaGlobal logo" /></div>
+             <span class="chip chip-live">Current</span>
+          </div>
+          <h3>Graphic Designer</h3>
+          <p class="work-org">NafaGlobal · 2025 — present</p>
+          <p>Brand identities, posters and marketing creatives for global reach.</p>
           <span class="work-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
@@ -249,8 +262,8 @@
       </div>
       <div class="marquee marquee-reverse reveal" aria-label="Programming languages">
         <div class="marquee-track">
-          <span><img src="assets/logos/cpp.svg" alt="" />C++</span><span><img src="assets/logos/csharp.svg" alt="" />C#</span><span><img src="assets/logos/python.svg" alt="" />Python</span><span><img src="assets/logos/javascript.svg" alt="" />JavaScript</span><span><img src="assets/logos/html5.svg" alt="" />HTML</span><span><img src="assets/logos/css3.svg" alt="" />CSS</span><span><img src="assets/logos/mysql.svg" alt="" />SQL</span><span><img src="assets/logos/qt.svg" alt="" />Qt</span>
-          <span aria-hidden="true"><img src="assets/logos/cpp.svg" alt="" />C++</span><span aria-hidden="true"><img src="assets/logos/csharp.svg" alt="" />C#</span><span aria-hidden="true"><img src="assets/logos/python.svg" alt="" />Python</span><span aria-hidden="true"><img src="assets/logos/javascript.svg" alt="" />JavaScript</span><span aria-hidden="true"><img src="assets/logos/html5.svg" alt="" />HTML</span><span aria-hidden="true"><img src="assets/logos/css3.svg" alt="" />CSS</span><span aria-hidden="true"><img src="assets/logos/mysql.svg" alt="" />SQL</span><span aria-hidden="true"><img src="assets/logos/qt.svg" alt="" />Qt</span>
+          <span><img src="assets/logos/cpp.svg" alt="" />C++</span><span><img src="assets/logos/csharp.svg" alt="" />C#</span><span><img src="assets/logos/python.svg" alt="" />Python</span><span><img src="assets/logos/javascript.svg" alt="" />JavaScript</span><span><img src="assets/logos/html5.svg" alt="" />HTML</span><span><img src="assets/logos/css3.svg" alt="" />CSS</span><span><img src="assets/logos/mysql.svg" alt="" />SQL</span><span><img src="assets/logos/qt.svg" alt="" />Qt</span><span><img src="assets/logos/java.svg" alt="" />Java</span><span><img src="assets/logos/java.svg" alt="" />JavaFX</span><span><img src="assets/logos/spring.svg" alt="" />Spring Boot</span><span><img src="assets/logos/docker.svg" alt="" />Docker</span>
+          <span aria-hidden="true"><img src="assets/logos/cpp.svg" alt="" />C++</span><span aria-hidden="true"><img src="assets/logos/csharp.svg" alt="" />C#</span><span aria-hidden="true"><img src="assets/logos/python.svg" alt="" />Python</span><span aria-hidden="true"><img src="assets/logos/javascript.svg" alt="" />JavaScript</span><span aria-hidden="true"><img src="assets/logos/html5.svg" alt="" />HTML</span><span aria-hidden="true"><img src="assets/logos/css3.svg" alt="" />CSS</span><span aria-hidden="true"><img src="assets/logos/mysql.svg" alt="" />SQL</span><span aria-hidden="true"><img src="assets/logos/qt.svg" alt="" />Qt</span><span aria-hidden="true"><img src="assets/logos/java.svg" alt="" />Java</span><span aria-hidden="true"><img src="assets/logos/java.svg" alt="" />JavaFX</span><span aria-hidden="true"><img src="assets/logos/spring.svg" alt="" />Spring Boot</span><span aria-hidden="true"><img src="assets/logos/docker.svg" alt="" />Docker</span>
         </div>
       </div>
     </section>
@@ -283,11 +296,56 @@
         <span class="kicker">08 — On repeat</span>
         <h2>Music I <em class="serif">listen</em> to</h2>
       </div>
-      <div class="music-row">
-        <div class="music-card reveal"><div class="vinyl"><div class="vinyl-label"></div></div><div><strong>Lo-fi &amp; chillhop</strong><span>while designing</span></div></div>
-        <div class="music-card reveal"><div class="vinyl"><div class="vinyl-label alt1"></div></div><div><strong>Synthwave</strong><span>while coding</span></div></div>
-        <div class="music-card reveal"><div class="vinyl"><div class="vinyl-label alt2"></div></div><div><strong>Indie rock</strong><span>while gaming</span></div></div>
-        <div class="music-card reveal"><div class="vinyl"><div class="vinyl-label alt3"></div></div><div><strong>Bangla classics</strong><span>always</span></div></div>
+      <div class="music-row reveal" data-drag-scroll>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="Another Day in Paradise" data-artist="Phil Collins" alt="Another Day in Paradise cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>Another Day in Paradise</strong><span>Phil Collins</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="Eyes Without a Face" data-artist="Billy Idol" alt="Eyes Without a Face cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>Eyes Without a Face</strong><span>Billy Idol</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="Pighal Ja" data-artist="Abdul Hannan" alt="Pighal Ja cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>Pighal Ja</strong><span>Abdul Hannan</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="Esho Brishti Namai" data-artist="Habib Wahid" alt="Esho Brishti Namai cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>Esho Brishti Namai</strong><span>Habib Wahid</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="Kanwal" data-artist="Hasan Raheem" alt="Kanwal cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>Kanwal</strong><span>Hasan Raheem</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="I Think They Call This Love" data-artist="Matthew Ifield" alt="I Think They Call This Love cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>I Think They Call This Love</strong><span>Matthew Ifield (cover)</span></div>
+          </figcaption>
+        </figure>
+        <figure class="music-item">
+          <div class="music-cover"><img data-title="The Night We Met" data-artist="Lord Huron" alt="The Night We Met cover art" loading="lazy" /></div>
+          <figcaption class="music-overlay">
+            <div class="music-badge"><svg><use href="#icon-spotify"/></svg>Spotify</div>
+            <div class="music-info"><strong>The Night We Met</strong><span>Lord Huron</span></div>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -300,19 +358,23 @@
       <div class="hobby-grid">
         <a class="hobby-card reveal" href="setup.html">
           <img src="assets/Setup.jpeg" alt="My PC setup" />
-          <div class="hobby-caption"><strong>My battlestation</strong><span>Built it myself, part by part. Full gear list →</span></div>
+          <div class="hobby-caption"><strong>My battlestation</strong><span>Built it myself, part by part.</span></div>
+          <span class="hobby-explore" aria-hidden="true"><svg><use href="#icon-arrow-up-right"/></svg></span>
         </a>
-        <figure class="hobby-card reveal">
-          <img src="assets/hobby-tournament.svg" alt="Tournament hosting" />
-          <figcaption><strong>Esports</strong><span>Working on BD esports scene organizing tournament, managing teams and working wth multiple international brands.</span></figcaption>
-        </figure>
+        <a class="hobby-card reveal" href="esports.html">
+          <img src="assets/ICT_Fest_VPG_1.jpg" alt="Tournament hosting" />
+          <div class="hobby-caption"><strong>Esports</strong><span>Hosted 20+ tournaments and 5+ LAN events across Bangladesh.</span></div>
+          <span class="hobby-explore" aria-hidden="true"><svg><use href="#icon-arrow-up-right"/></svg></span>
+        </a>
         <a class="hobby-card reveal" href="travel.html">
-          <img src="assets/hobby-travel.svg" alt="Travelling" />
-          <div class="hobby-caption"><strong>Travelling</strong><span>Planning to visit 10 countries before I graduate. Where I've been →</span></div>
+          <img src="assets/ABC.jpg" alt="Travelling" />
+          <div class="hobby-caption"><strong>Travelling</strong><span>Planning to visit 10 countries before I graduate.</span></div>
+          <span class="hobby-explore" aria-hidden="true"><svg><use href="#icon-arrow-up-right"/></svg></span>
         </a>
         <a class="hobby-card reveal" href="perfumes.html">
-          <img src="assets/hobby-perfume.svg" alt="Perfume collection" />
-          <div class="hobby-caption"><strong>Perfume collection</strong><span>A few signature scents I keep coming back to. See the shelf →</span></div>
+          <img src="assets/sniff.webp" alt="Perfume collection" />
+          <div class="hobby-caption"><strong>Perfume collection</strong><span>A few signature scents I keep coming back to.</span></div>
+          <span class="hobby-explore" aria-hidden="true"><svg><use href="#icon-arrow-up-right"/></svg></span>
         </a>
       </div>
     </section>
@@ -366,10 +428,10 @@
           <h2 class="contact-title">Let's <em class="serif">talk</em></h2>
           <p class="contact-desc">Got a project, a job, or just want to say hi? Drop me a message and I'll get back to you within 24 hours.</p>
           <div class="contact-info">
-            <a href="mailto:mahirlabib389@gmail.com" class="contact-link">
+            <button type="button" class="contact-link" id="email-reveal" data-user="mahirlabib389" data-domain="gmail.com">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              mahirlabib389@gmail.com
-            </a>
+              <span id="email-reveal-text">Click to reveal email</span>
+            </button>
           </div>
         </div>
 
@@ -377,11 +439,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="contact-name">Your Name</label>
-              <input type="text" id="contact-name" name="from_name" required placeholder="John Doe" />
+              <input type="text" id="contact-name" name="from_name" required placeholder="Arafat Hossain" />
             </div>
             <div class="form-group">
               <label for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" name="from_email" required placeholder="john@example.com" />
+              <input type="email" id="contact-email" name="from_email" required placeholder="mahir@gmail.com" />
             </div>
           </div>
           <div class="form-group">
@@ -422,5 +484,6 @@
   <script type="module" src="js/projects.js"></script>
   <script type="module" src="js/globe.js"></script>
   <script src="js/github-activity.js"></script>
+  <script src="js/music-art.js"></script>
 </body>
 </html>

@@ -63,6 +63,25 @@ document.querySelectorAll("[data-drag-scroll]").forEach((row) => {
   row.addEventListener("click", (e) => { if (moved) e.preventDefault(); }, true);
 });
 
+// ============ Reveal-on-click email (kept out of the raw HTML to cut down on bot scraping) ============
+(function () {
+  const btn = document.getElementById("email-reveal");
+  if (!btn) return;
+  const label = document.getElementById("email-reveal-text");
+  const address = `${btn.dataset.user}@${btn.dataset.domain}`;
+
+  btn.addEventListener("click", () => {
+    if (btn.dataset.revealed) {
+      window.location.href = `mailto:${address}`;
+      return;
+    }
+    btn.dataset.revealed = "true";
+    label.textContent = "Copied — " + address;
+    navigator.clipboard?.writeText(address).catch(() => {});
+    setTimeout(() => { label.textContent = address; }, 1600);
+  });
+})();
+
 // ============ Magnetic pull on the big contact button ============
 document.querySelectorAll(".magnetic").forEach((el) => {
   el.addEventListener("mousemove", (e) => {

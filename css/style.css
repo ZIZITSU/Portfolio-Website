@@ -457,14 +457,35 @@ img { display: block; max-width: 100%; }
   color: var(--signal-deep);
   padding-top: 4px;
 }
-.t-body h3 {
+.t-body {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+.t-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 64px;
+}
+.t-logo img {
+  height: 60px;
+  width: auto;
+  max-width: 64px;
+  object-fit: contain;
+  display: block;
+}
+.t-logo img.t-logo-sm { height: 42px; }
+.t-text { display: flex; flex-direction: column; justify-content: center; }
+.t-text h3 {
   font-family: var(--font-display);
   font-size: 21px;
   font-weight: 650;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
 }
-.t-body p { color: var(--muted); font-size: 15.5px; line-height: 1.5; }
+.t-text p { color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 
 /* ================= WORK ================= */
 .work-cards {
@@ -1045,60 +1066,79 @@ img { display: block; max-width: 100%; }
 
 /* ================= MUSIC ================= */
 .music-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-.music-card {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 22px;
-  border-radius: 20px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--signal-deep) transparent;
+  cursor: grab;
 }
-.music-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 44px rgba(124, 92, 240, 0.18);
-}
-.music-card:hover .vinyl { animation-play-state: running; }
-.vinyl {
+.music-row.dragging { cursor: grabbing; scroll-behavior: auto; }
+.music-item {
   position: relative;
-  flex-shrink: 0;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #2a2a2c 0 30%, #121214 30% 100%);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 6px 16px rgba(0, 0, 0, 0.3);
-  animation: spin 3.5s linear infinite paused;
+  flex: 0 0 clamp(260px, 28vw, 360px);
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(155deg, #1a1a1e, #0c0c0e);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
 }
-.vinyl::after {
-  content: "";
+.music-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 60px rgba(29, 185, 84, 0.22);
+}
+.music-cover { position: absolute; inset: 0; }
+.music-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease), transform 0.6s var(--ease);
+}
+.music-cover img.loaded { opacity: 1; }
+.music-item:hover .music-cover img { transform: scale(1.05); }
+.music-overlay {
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: repeating-radial-gradient(
-    circle,
-    transparent 0 3px,
-    rgba(255, 255, 255, 0.04) 3px 4px
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 6, 0.92) 0%,
+    rgba(5, 5, 6, 0.5) 40%,
+    transparent 68%
   );
 }
-.vinyl-label {
-  position: absolute;
-  inset: 32%;
-  border-radius: 50%;
-  background: var(--signal);
+.music-badge {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(5, 5, 6, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(29, 185, 84, 0.35);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1db954;
 }
-.vinyl-label.alt1 { background: #e2a465; }
-.vinyl-label.alt2 { background: #65b5e2; }
-.vinyl-label.alt3 { background: #e26578; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.music-card strong { display: block; font-size: 16px; letter-spacing: -0.01em; }
-.music-card span { font-size: 13.5px; color: var(--muted); }
+.music-badge svg { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
+.music-info strong {
+  display: block;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+}
+.music-info span { font-size: 13px; color: var(--muted); }
 
 /* ================= WATCH ================= */
 .watch-grid {
@@ -1169,12 +1209,35 @@ img { display: block; max-width: 100%; }
   gap: 18px;
 }
 .hobby-card {
+  position: relative;
   border-radius: 22px;
   overflow: hidden;
   background: var(--panel);
   border: 1px solid var(--line);
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
   transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+}
+.hobby-explore {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--signal);
+  color: var(--on-signal);
+  box-shadow: 0 8px 22px rgba(124, 92, 240, 0.4),
+    inset 0 1px rgba(255, 255, 255, 0.35);
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.hobby-explore svg { width: 16px; height: 16px; }
+.hobby-card:hover .hobby-explore {
+  background: var(--signal-bright);
+  box-shadow: 0 12px 30px rgba(124, 92, 240, 0.55),
+    inset 0 1px rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
 }
 .hobby-card:hover {
   transform: translateY(-8px);
@@ -1192,7 +1255,7 @@ img { display: block; max-width: 100%; }
 }
 .hobby-card:hover img { transform: scale(1.05); }
 .hobby-card figcaption,
-.hobby-card .hobby-caption { padding: 18px 20px; }
+.hobby-card .hobby-caption { padding: 18px 56px 18px 20px; }
 .hobby-card strong {
   display: block;
   font-family: var(--font-display);
@@ -1233,6 +1296,30 @@ img { display: block; max-width: 100%; }
     rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid var(--line);
 }
+.hobby-card .stat-tile {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background:
+    radial-gradient(60% 80% at 50% 40%, rgba(167, 139, 250, 0.16), transparent 70%),
+    rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--line);
+}
+.hobby-card .stat-tile strong {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--signal-bright);
+  line-height: 1;
+}
+.hobby-card .stat-tile span {
+  font-size: 13px;
+  color: var(--muted);
+}
 .hobby-card .status-chip {
   display: inline-block;
   margin-left: 8px;
@@ -1252,7 +1339,7 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: clamp(24px, 4vw, 40px);
-  align-items: start;
+  align-items: stretch;
 }
 .globe-card,
 .github-card {
@@ -1264,6 +1351,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
 }
+.globe-card { justify-content: center; }
 .globe-wrap {
   position: relative;
   width: 100%;
@@ -1432,9 +1520,11 @@ img { display: block; max-width: 100%; }
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: inherit;
   font-size: 15px;
   font-weight: 550;
   color: #b2b4ab;
+  cursor: pointer;
   transition: background 0.3s var(--ease), color 0.3s, border-color 0.3s;
 }
 .contact-link:hover {

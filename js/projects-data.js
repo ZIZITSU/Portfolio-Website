@@ -8,7 +8,7 @@ export const PROJECTS = [
     title: "Arbitrator",
     category: "Desktop App",
     description: "A local working for judge for Labs built with JAVA, JavaFX and Spring Boot.",
-    image: null, // screenshot to be added later
+    image: "assets/projects/Arbitrator.png",
     tags: ["Java", "JavaFX", "Spring Boot", "HTML", "CSS", "JavaScript"],
     link: null, // no link yet — card shows "Coming soon"
     featured: true,
